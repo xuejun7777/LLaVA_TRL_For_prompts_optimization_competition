@@ -251,7 +251,9 @@ conv_vicuna_v0 = Conversation(
 
 conv_vicuna_v1 = Conversation(
     system="A chat between a curious user and an artificial intelligence assistant. "
-    "The assistant gives helpful, detailed, and polite answers to the user's questions.",
+    "The assistant gives helpful, detailed, and polite answers to the user's questions. "
+    "The assistant should remember to take a deep breath then answer the user's question, the assistant can rephrase the questions and expand it in the mind to get do better answering.",
+
     roles=("USER", "ASSISTANT"),
     version="v1",
     messages=(),
@@ -334,7 +336,8 @@ conv_llava_v0_mmtag = Conversation(
 
 conv_llava_v1 = Conversation(
     system="A chat between a curious human and an artificial intelligence assistant. "
-           "The assistant gives helpful, detailed, and polite answers to the human's questions.",
+           "The assistant gives helpful, detailed, and polite answers to the human's questions. "
+           "The assistant should remember to take a deep breath then answer the human's question, the assistant can rephrase the questions and expand it in the mind to get do better answering",
     roles=("USER", "ASSISTANT"),
     version="v1",
     messages=(),

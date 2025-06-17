@@ -1,0 +1,80 @@
+(llava) xuejun@oem-Precision-5820-Tower-X-Series:~$ cd LLaVA/
+(llava) xuejun@oem-Precision-5820-Tower-X-Series:~/LLaVA$ python -m llava.serve.cli \
+>     --model-path ./liuhaotian/llava-v1.5-7b \
+>     --image-file ./SubmissionImages/A.png \
+> 
+[2023-11-25 16:08:56,862] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████| 2/2 [01:26<00:00, 43.39s/it]
+USER: what can you see?
+ASSISTANT: The image features a large stone building with a prominent archway, which is the entrance to the South Soth University. The archway is adorned with gold lettering, making it stand out as a focal point of the building. The entrance is designed to provide a welcoming and impressive atmosphere for visitors and students alike.
+USER: Write detailed, precise prompts for stable diffusion to generate this image, describing everything in the image as completely as possible.
+ASSISTANT: To generate the image, I would prompt the stable diffusion model with the following details:
+
+1. The building is made of stone and has a large, prominent archway as its entrance.
+2. The archway is adorned with gold lettering, which reads "South Soth University."
+3. The archway is located at the center of the building, serving as a focal point.
+4. The building has a stone-like texture, giving it a sturdy and solid appearance.
+5. The archway is wide enough to accommodate multiple people entering or exiting the building.
+6. The surrounding area is likely to be well-maintained and clean, given the importance of the university building.
+7. The image should capture the entirety of the building, including the archway and the surrounding area.
+USER: Integrate your prompts reasonably.
+ASSISTANT: To generate the image, I would prompt the stable diffusion model with the following integrated prompts:
+
+"Please generate an image of a large stone building with a prominent archway as its entrance. The archway should be adorned with gold lettering that reads 'South Soth University.' The building should have a stone-like texture, giving it a sturdy and solid appearance. The archway should be wide enough to accommodate multiple people entering or exiting the building. The surrounding area should be well-maintained and clean, reflecting the importance of the university building. Please capture the entirety of the building, including the archway and the surrounding area."
+USER: make this prompt more concise and complete.
+ASSISTANT: "Please generate an image of a large stone building with a prominent archway as its entrance. The archway is adorned with gold lettering that reads 'South Soth University.' The building has a stone-like texture and the archway is wide enough to accommodate multiple people. The surrounding area should be well-maintained and clean, reflecting the importance of the university building. Please capture the entirety of the building, including the archway and the surrounding area."
+USER: ^CTraceback (most recent call last):
+  File "/home/xuejun/anaconda3/envs/llava/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/xuejun/anaconda3/envs/llava/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/xuejun/LLaVA/llava/serve/cli.py", line 124, in <module>
+    main(args)
+  File "/home/xuejun/LLaVA/llava/serve/cli.py", line 64, in main
+    inp = input(f"{roles[0]}: ")
+KeyboardInterrupt
+
+(llava) xuejun@oem-Precision-5820-Tower-X-Series:~/LLaVA$ python -m llava.serve.cli     --model-path ./liuhaotian/llava-v1.5-7b     --image-file ./SubmissionImages/B.png \
+> 
+[2023-11-25 16:22:47,048] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████| 2/2 [01:26<00:00, 43.23s/it]
+USER: Write detailed, precise prompts for stable diffusion to generate this image, describing everything in the image as completely as possible and integrate you prompt to make it more concise and complete.
+ASSISTANT: In the image, a group of people is gathered in a store, browsing through various electronic devices. There are multiple laptops on display, with some placed on tables and others on the floor. A total of 14 laptops can be seen in the scene, with some positioned closer to the people and others further away.
+
+In addition to the laptops, there are two TVs visible in the store, one located near the left side and the other towards the right side of the room. A few people are carrying handbags, with three handbags visible in the scene.
+
+The store is quite busy, with at least 15 people present in the image, either browsing or interacting with each other. Some people are standing near the laptops, while others are scattered throughout the store. The overall atmosphere is that of a lively electronics store, with people engaged in their shopping experience.
+USER: make prompt more concise 
+ASSISTANT: In the image, a group of people is browsing through various electronic devices in a store. There are multiple laptops on display, with some on tables and others on the floor. A total of 14 laptops can be seen, along with two TVs. People are carrying handbags, and the store is busy with at least 15 people present. The atmosphere is lively as people engage in their shopping experience.
+USER: ^CTraceback (most recent call last):
+  File "/home/xuejun/anaconda3/envs/llava/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/xuejun/anaconda3/envs/llava/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/xuejun/LLaVA/llava/serve/cli.py", line 124, in <module>
+    main(args)
+  File "/home/xuejun/LLaVA/llava/serve/cli.py", line 64, in main
+    inp = input(f"{roles[0]}: ")
+KeyboardInterrupt
+^C^C
+(llava) xuejun@oem-Precision-5820-Tower-X-Series:~/LLaVA$ python
+Python 3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> 
+[3]+  已停止               python
+(llava) xuejun@oem-Precision-5820-Tower-X-Series:~/LLaVA$ python
+Python 3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> print(torch.__version__)
+2.0.1+cu117
+>>> 
+>>> print(torch.version.cuda)
+11.7
+>>> 
+>>> print(torch.backends.cudnn.version())
+8906
+>>> 
+[4]+  已停止               python
+(llava) xuejun@oem-Precision-5820-Tower-X-Series:~/LLaVA$ 
